@@ -1,28 +1,3 @@
-import java.lang.annotation.Repeatable;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-
-@Retention(RetentionPolicy.RUNTIME)
-@interface OutcomeRange {
-	Class ann();	
-	int min();
-	int max();
-}
-
-@Retention(RetentionPolicy.RUNTIME)
-@interface Prob {
-	String event() default "";	
-	int outcome();
-	int val();
-}
-
-@Retention(RetentionPolicy.RUNTIME)
-@Repeatable(DependProbs.class)
-@interface DependProb {
-	String event();	
-	Prob prob();
-}
-
 public class Coin {
 	
 	public void toss() {

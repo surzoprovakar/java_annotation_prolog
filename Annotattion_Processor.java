@@ -30,8 +30,9 @@ public class Annotattion_Processor {
             System.out.println();
 
             System.out.println("Annotation Paramter for DependProbs");
-            DependProbs depend1 = method.getAnnotation(DependProbs.class); 
-            System.out.println("Event: " + depend1.value());
+            DependProb[] dp = method.getAnnotationsByType(DependProb.class);
+            System.out.println("Event: " + dp[0].event());
+            System.out.println("Prob: " + dp[0].prob());
             
 
         }
